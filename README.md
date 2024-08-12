@@ -29,7 +29,7 @@ This FastAPI application checks the DNS health of a given domain by querying var
 
 4. Run the FastAPI application:
     ```sh
-    uvicorn main:app --reload
+   python main.py
     ```
 
 5. Access the API at `http://localhost:8000`.
