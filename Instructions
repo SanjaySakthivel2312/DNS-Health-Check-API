@@ -1,0 +1,121 @@
+                                                      DNS Health Checker
+
+This repository contains a FastAPI application that checks the DNS health of a given domain, including DNSSEC, SOA, NS, MX, and A/AAAA records, and stores the results in a MongoDB database.
+
+
+Project Delivery Instructions
+
+1.CLONE THE REPOSITORY
+
+#To clone the repository from GitHub, follow these steps:
+#Install Git using your windows Browser ,After installing Git open your terminal (VSCode or any other IDE) and use the command
+
+#Clone the repository using the following command:
+
+          > git clone https://github.com/your-username/dns-health-checker.git
+
+#Navigate into the cloned directory:
+             
+          > cd dns-health-checker
+
+2.SETUP ENVIRONMENT:
+
+To set up the development environment, follow these steps:
+
+#Create a Virtual Environment:
+             
+           > python3 -m venv venv
+           > source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+
+
+#Install required packages:
+     
+           > pip install -r requirements.txt
+
+3.CONFIGURE DATABASE:
+
+#Install MongoDB:
+Follow the installation guide for your OS at MongoDB Installation
+
+#Start Mongodb
+ 	
+	>mongod
+
+#MongoDB Configuration:
+
+The application connects to MongoDB using the following default connection string:
+
+	>mongodb://localhost:27017/
+
+This can be configured in the FastAPI code if needed.
+
+#Verify Database Connection:
+
+The application stores DNS check results in a database named dns_health_db under the collection domain_data.
+
+
+4.Run the Application
+
+#To run the FastAPI application, use the following command:
+
+	> python main.py
+(Ensure that your python file is named as main.py if not provide your python file name)
+
+#The application will be accessible at `http://localhost:8000`
+
+5.Usage Examples:
+
+#CHECK DNS HEALTH:
+
+      -Endpoint: /dns-health/{domain}
+      -Method: GET
+      -Example:
+
+         >http://localhost:8000/dns-health/example.com
+
+#Sample response:
+
+{
+  "unique_id": "some-unique-id",
+  "result": {
+    "domain": "example.com",
+    "dns_health": {
+      "A": {
+        "status": "OK",
+        "ttl": 300,
+        "address": ["93.184.216.34"]
+      },
+      "AAAA": {
+        "status": "No records found"
+      },
+      "DNSSEC": {
+        "status": "OK",
+        "dnssec_analysis": {...}
+      },
+      "SOA": {
+        "status": "OK",
+        "ttl": 86400,
+        "mname": "ns1.example.com.",
+        "rname": "hostmaster.example.com.",
+        "serial": 2024081201,
+        "refresh": 7200,
+        "retry": 3600,
+        "expire": 1209600,
+        "minimum": 3600
+      },
+      "NS": {
+        "status": "OK",
+        "ttl": 86400,
+        "nameservers": ["ns1.example.com.", "ns2.example.com."]
+      },
+      "MX": {
+        "status": "OK",
+        "ttl": 86400,
+        "preference": 10,
+        "exchange": "mail.example.com."
+      }
+    }
+  }
+}
+
+
