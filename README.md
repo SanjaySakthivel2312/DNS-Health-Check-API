@@ -52,7 +52,3 @@ A FastAPI-based DNS Health Check API that queries DNS records (A, AAAA, SOA, NS,
 - `.gitignore`: Files to ignore in the repository.
 - `dnssec-analyzer`: DNSSEC analysis tool.
 
-## License
-[MIT License](LICENSE)
-
-
