@@ -1,0 +1,21 @@
+# Python Bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual Environment
+.env
+env/
+venv/
+.venv/
+
+# DNSSEC Analyzer binary (if applicable)
+dnssec-analyzer
+
+# Database Files
+db.sqlite3
+
+# IDE/Editor Specific Files
+.vscode/
+.idea/
