@@ -1,5 +1,6 @@
-# DNS-Health-Check-API
-A FastAPI-based DNS Health Check API that queries DNS records (A, AAAA, SOA, NS, MX) and performs DNSSEC analysis for a given domain. The results are stored in MongoDB for easy retrieval and analysis. 
+# DNS Health Check API
+
+This FastAPI application checks the DNS health of a given domain by querying various DNS records (A, AAAA, SOA, NS, MX) and performing a DNSSEC analysis.
 
 ## Features
 - Query DNS records for A, AAAA, SOA, NS, and MX.
@@ -52,5 +53,5 @@ A FastAPI-based DNS Health Check API that queries DNS records (A, AAAA, SOA, NS,
 - `.gitignore`: Files to ignore in the repository.
 - `dnssec-analyzer`: DNSSEC analysis tool.
 
-##License
-Apache License, version 2.0.
+## License
+[MIT License](LICENSE)
