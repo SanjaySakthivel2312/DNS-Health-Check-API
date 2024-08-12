@@ -54,4 +54,4 @@ This FastAPI application checks the DNS health of a given domain by querying var
 - `dnssec-analyzer`: DNSSEC analysis tool.
 
 ## License
-[MIT License](LICENSE)
+[Apache License, version 2.0.](LICENSE)
